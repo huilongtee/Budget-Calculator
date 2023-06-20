@@ -5,25 +5,22 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-
         Scanner keyboard = new Scanner(System.in);
         budgetCalculator bc = new budgetCalculator();
 
-
         while (true) {
             try {
-                String  tempMaritalStatus;
+                String tempMaritalStatus;
 
                 //prompt the user of their age, marital status, car ownership status, and number of children
                 System.out.print("Please enter your marital status (single or married): ");
-                  tempMaritalStatus = keyboard.nextLine();
+                tempMaritalStatus = keyboard.nextLine();
                 bc.setMaritalStatus(tempMaritalStatus);
-break;
+                break;
             } catch (Exception e) {
                 System.out.println(e);
                 keyboard.next();
             }
-
         }
 
         while (true) {
@@ -33,13 +30,10 @@ break;
                 tempCarOwnershipStatus = keyboard.nextLine();
                 bc.setCarOwnershipStatus(tempCarOwnershipStatus);
                 break;
-
             } catch (Exception e) {
                 System.out.println(e);
                 keyboard.next();
             }
-
-
         }
 
         while (true) {
@@ -54,8 +48,6 @@ break;
                 System.out.println(e);
                 keyboard.next();
             }
-
-
         }
 
         while (true) {
@@ -65,13 +57,10 @@ break;
                 tempChildrenNo = keyboard.nextInt();
                 bc.setChildrenNo(tempChildrenNo);
                 break;
-
             } catch (Exception e) {
                 System.out.println(e);
                 keyboard.next();
             }
-
-
         }
 
         //call calculate budget for expenses method
