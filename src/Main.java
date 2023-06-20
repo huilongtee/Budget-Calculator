@@ -7,48 +7,87 @@ public class Main {
 
 
         Scanner keyboard = new Scanner(System.in);
-        int tempAge;
-        String tempMaritalStatus;
-        int tempChildrenNo;
-        String tempCarOwnershipStatus;
-        int tempMonthlyIncome;
-        try {
-            //prompt the user of their age, marital status, car ownership status, and number of children
-            System.out.print("Please enter your marital status (single or married): ");
-            tempMaritalStatus = keyboard.nextLine();
+        budgetCalculator bc = new budgetCalculator();
 
-            System.out.print("Please enter your car ownership status (car owner or public transport user): ");
-            tempCarOwnershipStatus = keyboard.nextLine();
 
-            System.out.print("Please enter your age: ");
-            tempAge = keyboard.nextInt();
+        while (true) {
+            try {
+                String  tempMaritalStatus;
 
-            System.out.print("Please enter the number of children you have: ");
-            tempChildrenNo = keyboard.nextInt();
+                //prompt the user of their age, marital status, car ownership status, and number of children
+                System.out.print("Please enter your marital status (single or married): ");
+                  tempMaritalStatus = keyboard.nextLine();
+                bc.setMaritalStatus(tempMaritalStatus);
+break;
+            } catch (Exception e) {
+                System.out.println(e);
+                keyboard.next();
+            }
 
-            budgetCalculator bc = new budgetCalculator();
-
-            //setter
-            bc.setAge(tempAge);
-            bc.setMaritalStatus(tempMaritalStatus);
-            bc.setChildrenNo(tempChildrenNo);
-            bc.setCarOwnershipStatus(tempCarOwnershipStatus);
-
-            //call calculate budget for expenses method
-            bc.calculateBudget();
-
-            //prompt the user of their monthly income
-            System.out.print("Please enter your monthly income: ");
-            tempMonthlyIncome = keyboard.nextInt();
-
-            //call calculate saving budget method
-            bc.calculateSavingBudget(tempMonthlyIncome);
-
-            //compares the method of comparison between total wants and needs with the suggested expenses
-            bc.comparison();
-        } catch (Exception e) {
-            System.out.println(e);
         }
+
+        while (true) {
+            try {
+                String tempCarOwnershipStatus = null;
+                System.out.print("Please enter your car ownership status (car owner or public transport user): ");
+                tempCarOwnershipStatus = keyboard.nextLine();
+                bc.setCarOwnershipStatus(tempCarOwnershipStatus);
+                break;
+
+            } catch (Exception e) {
+                System.out.println(e);
+                keyboard.next();
+            }
+
+
+        }
+
+        while (true) {
+            try {
+                int tempAge;
+                System.out.print("Please enter your age: ");
+                tempAge = keyboard.nextInt();
+                bc.setAge(tempAge);
+                break;
+
+            } catch (Exception e) {
+                System.out.println(e);
+                keyboard.next();
+            }
+
+
+        }
+
+        while (true) {
+            try {
+                int tempChildrenNo;
+                System.out.print("Please enter the number of children you have: ");
+                tempChildrenNo = keyboard.nextInt();
+                bc.setChildrenNo(tempChildrenNo);
+                break;
+
+            } catch (Exception e) {
+                System.out.println(e);
+                keyboard.next();
+            }
+
+
+        }
+
+        //call calculate budget for expenses method
+        bc.calculateBudget();
+        int tempMonthlyIncome;
+
+        //prompt the user of their monthly income
+        System.out.print("Please enter your monthly income: ");
+        tempMonthlyIncome = keyboard.nextInt();
+
+        //call calculate saving budget method
+        bc.calculateSavingBudget(tempMonthlyIncome);
+
+        //compares the method of comparison between total wants and needs with the suggested expenses
+        bc.comparison();
+
 
     }
 }

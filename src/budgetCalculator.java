@@ -25,23 +25,23 @@ public class budgetCalculator {
     }
 
     public void calculateBudget() {
-        if (maritalStatus.equalsIgnoreCase("single") && carOwnershipStatus.equalsIgnoreCase("public transport user")) {
+        if ((maritalStatus != null && carOwnershipStatus != null) && maritalStatus.equalsIgnoreCase("single") && carOwnershipStatus.equalsIgnoreCase("public transport user")) {
             this.setBudget(1760);
-        } else if (maritalStatus.equalsIgnoreCase("single") && carOwnershipStatus.equalsIgnoreCase("car owner")) {
+        } else if ((maritalStatus != null && carOwnershipStatus != null) && maritalStatus.equalsIgnoreCase("single") && carOwnershipStatus.equalsIgnoreCase("car owner")) {
             this.setBudget(2290);
-        } else if (maritalStatus.equalsIgnoreCase("married") && childrenNo == 0) {
+        } else if ((maritalStatus != null) && maritalStatus.equalsIgnoreCase("married") && childrenNo == 0) {
             this.setBudget(4110);
-        } else if (maritalStatus.equalsIgnoreCase("married") && childrenNo == 1) {
+        } else if ((maritalStatus != null) && maritalStatus.equalsIgnoreCase("married") && childrenNo == 1) {
             this.setBudget(5360);
-        } else if (maritalStatus.equalsIgnoreCase("married") && childrenNo == 2) {
+        } else if ((maritalStatus != null) && maritalStatus.equalsIgnoreCase("married") && childrenNo == 2) {
             this.setBudget(6100);
-        } else if (maritalStatus.equalsIgnoreCase("single") && age >= 60) {
+        } else if ((maritalStatus != null) && maritalStatus.equalsIgnoreCase("single") && age >= 60) {
             this.setBudget(2330);
-        } else if (maritalStatus.equalsIgnoreCase("married") && age >= 60) {
+        } else if ((maritalStatus != null) && maritalStatus.equalsIgnoreCase("married") && age >= 60) {
             this.setBudget(3020);
-        } else if (maritalStatus.equalsIgnoreCase("single") && childrenNo == 1) {
+        } else if ((maritalStatus != null) && maritalStatus.equalsIgnoreCase("single") && childrenNo == 1) {
             this.setBudget(4200);
-        } else if (maritalStatus.equalsIgnoreCase("single") && childrenNo == 2) {
+        } else if ((maritalStatus != null) && maritalStatus.equalsIgnoreCase("single") && childrenNo == 2) {
             this.setBudget(4940);
         }
 
